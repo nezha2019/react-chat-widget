@@ -13,20 +13,23 @@ const WidgetLayout = props => (
     }
   >
     {props.showChat &&
-      <Conversation
-        title={props.title}
-        subtitle={props.subtitle}
-        sendMessage={props.onSendMessage}
-        senderPlaceHolder={props.senderPlaceHolder}
-        onQuickButtonClicked={props.onQuickButtonClicked}
-        profileAvatar={props.profileAvatar}
-        toggleChat={props.onToggleConversation}
-        showChat={props.showChat}
-        showCloseButton={props.showCloseButton}
-        disabledInput={props.disabledInput}
-        autofocus={props.autofocus}
-        titleAvatar={props.titleAvatar}
-      />
+      <div className="rcw-widget-content">
+        {typeof props.pluginBefore === 'function' ? props.pluginBefore() : props.pluginBefore}
+        <Conversation
+          title={props.title}
+          subtitle={props.subtitle}
+          sendMessage={props.onSendMessage}
+          senderPlaceHolder={props.senderPlaceHolder}
+          onQuickButtonClicked={props.onQuickButtonClicked}
+          profileAvatar={props.profileAvatar}
+          toggleChat={props.onToggleConversation}
+          showChat={props.showChat}
+          showCloseButton={props.showCloseButton}
+          disabledInput={props.disabledInput}
+          autofocus={props.autofocus}
+          titleAvatar={props.titleAvatar}
+        />
+      </div>
     }
     {props.customLauncher ?
       props.customLauncher(props.onToggleConversation) :

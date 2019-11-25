@@ -2,6 +2,9 @@
 @import 'common.scss';
 
 .rcw-conversation-container {
+  max-width: 370px;
+  flex: 1;
+
   .rcw-header {
     background-color: $turqois-1;
     border-radius: 10px 10px 0 0;

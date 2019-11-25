@@ -32,6 +32,7 @@ export default class App extends Component {
         handleNewUserMessage={this.handleNewUserMessage}
         handleQuickButtonClicked={this.handleQuickButtonClicked}
         badge={1}
+        pluginBefore={<div>Plugin before</div>}
       />
     );
   }
